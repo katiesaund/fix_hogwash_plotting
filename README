@@ -1,5 +1,18 @@
 Fixing hogwash issue when plotting very large dataset. 
 
+Used got the following error message:
+
+
+```
+[1] "Ancestral reconstruction complete: 2021-04-23 12:54:56"
+[1] "Permutation test complete: 2021-04-23 14:39:56"
+
+Error in do.call("cbind", lapply(x, "is.na")) :
+variable names are limited to 10000 bytes
+Calls: hogwash ... check_if_g_mat_can_be_plotted -> is.na -> is.na.data.frame -> do.call
+Execution halted
+```
+
 Failed run details: 
 
 622552 variants
@@ -14,3 +27,13 @@ perm = 10000
 fdr = 0.15
 bootstrap = 0.70
 test= "both"
+
+Successful run had 458409 variants (only difference). 
+
+So why did larger run fail?
+
+TODO:
+
+* Generate random genotype matrix with 700,000 variants
+* Generate random phenotype with 1,000 samples
+* Run with stated settings and fix plotting.  
