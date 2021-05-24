@@ -1,1 +1,16 @@
 Fixing hogwash issue when plotting very large dataset. 
+
+Failed run details: 
+
+622552 variants
+992 samples
+pheno = pheno_test
+geno = geno_test
+tree = tree_new
+tree_type = "phylogram"
+file_name = "hogwash_both"
+dir = "."
+perm = 10000
+fdr = 0.15
+bootstrap = 0.70
+test= "both"
